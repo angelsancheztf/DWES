@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .accordion {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+        
+        .active, .accordion:hover {
+          background-color: #ccc; 
+        }
+        
+        .panel {
+          padding: 0 18px;
+          display: none;
+          background-color: white;
+          overflow: hidden;
+        }
+
+        .accordion:after {
+        content: '\02795';
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+        }
+
+        .active:after {
+        content: "\2796";
+        }
+        </style>
+    <title>Ángel Sánchez Trillo-Figueroa || DWES</title>
+</head>
+<body>
+    
+<h2>Ángel Sánchez Trillo-Figueroa || DWES</h2>
+
+<button class="accordion">TEMA 1</button>
+<div class="panel">
+    <a href="TEMA 1/server_ejer1.js">Ejercicio 1/SERVER</a><br/>
+</div>
+
+<button class="accordion">TEMA 2</button>
+<div class="panel">
+    <a href="TEMA 2/ejer2.php">Ejercicio 1/Variables y tipos de datos</a><br/>
+    <a href="TEMA 2/ejer3.php">Ejercicio 2/Entrecomillado simple y doble</a><br/>
+    <a href="TEMA 2/ejer4.php">Ejercicio 3/Conversión tipos de datos</a><br/>
+    <a href="TEMA 2/ejer5.php">Ejercicio 4/Cadenas de texto</a><br/>
+    <a href="TEMA 2/ejer6.php">Ejercicio 5/Arrays</a><br/>
+</div>
+
+<button class="accordion">TEMA 3</button>
+<div class="panel">
+    <a href="TEMA 3/ejer7.php">Ejercicio 1/Masa muscular</a><br/>
+    <a href="TEMA 3/peso(if-else).php">Ejercicio 1.1/IMC</a><br/>
+    <a href="TEMA 3/dados_ejer8.php">Ejercicio 2/Dados</a><br/>
+    <a href="TEMA 3/fecha_ejer9.php">Ejercicio 3/Tiempo</a><br/>
+    <a href="TEMA 3/fecha_ejer10.php">Ejercicio 3.1/Tiempo 2</a><br/>
+    <a href="TEMA 3/ejer11.php">Ejercicio 4/Array de 10 valores</a><br/>
+    <a href="TEMA 3/ejer12.php">Ejercicio 5/Numero de valores iguales al valor 2</a><br/>
+    <a href="TEMA 3/ejer13.php">Ejercicio 6/Matriz de 10 x 10</a><br/>
+    <a href="TEMA 3/ejer14.php">Ejercicio 7/Array de las fechas obtenidas de la BD MySql y ordénalas de manera descendente</a><br/>
+</div>
+
+<button class="accordion">TEMA 4</button>
+<div class="panel">
+    <a href="TEMA 4/ejer15.php">Ejercicio 1/esPrimo</a><br/>
+    <a href="TEMA 4/ejer16.php">Ejercicio 2/esBisiesto</a><br/>
+    <a href="TEMA 4/ejer17.php">Ejercicio 3/fibonacci</a><br/>
+    <a href="TEMA 4/ejer18.php">Ejercicio 4/existeUsuario</a><br/>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
