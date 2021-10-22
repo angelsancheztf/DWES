@@ -7,11 +7,6 @@
     <title>Ejercicio 17</title>
 </head>
 <body>
-        
-    <form action ="ejer17.php" method="get">
-        Introducir un numero: <input type="text" name="introducir"></br>
-        <input type="submit" value="OK" /></br>
-    </form>
     <?php
     //Crea la función fibonacci que reciba por parámetro la cantidad de elementos que se desea obtener de 
     //la serie Fibonacci (si no se especifica nada por defecto obtendrá los 10 primeros), y 
@@ -25,17 +20,18 @@
     function fibonacci($introducir){
         
         $fibonacci = [0, 1];
+
         for($i=2;$i<=$introducir;$i++)
         {
             $fibonacci[] = $fibonacci[$i-1]+$fibonacci[$i-2];
         }
-        echo $fibonacci[$introducir] . "</br>";
+        return array($fibonacci);
     }
-    fibonacci($introducir);
     
-    $final = array(rand(1, 5));
     
-    echo($final);
+    //$final = "El numero es ". fibonacci($introducir);
+    
+    print_r($final);
     
     ?>
 </body>

@@ -7,15 +7,12 @@
     <title>Ejercicio 15</title>
 </head>
 <body>
-    <form action ="ejer15.php" method="get">
-        Introducir un numero: <input type="text" name="introducir"></br>
-        <input type="submit" value="OK" /></br>
-    </form>
     <?php
     //Crea la función esPrimo que reciba por parámetro un entero y devuelva un booleano indicando true si es primo o falso en caso contrario.
     //hacer que el usuario te diga el número
 
     $num = $_GET["introducir"];
+
 
     $i = $num;
         if (esPrimo($i)) {
@@ -26,21 +23,16 @@
     
     function esPrimo($num)
     {
-        if ($num == 2 || $num == 3 || $num == 5 || $num == 7) {
-            return True;
-        } else {
-            // comprobamos si es par
-            if ($num % 2 != 0) {
-                // comprobamos solo por los impares
-                for ($i = 3; $i <= sqrt($num); $i += 2) {
-                    if ($num % $i == 0) {
-                        return False;
-                    }
+        $cont=0;
+        
+        for($i=2; $i <= $num; $i++){
+            if($num % $i == 0){
+                if(++$cont > 1){
+                    return false;
                 }
-                return True;
-            }
+            }   
         }
-        return False;
+        return true;
     }
 
 

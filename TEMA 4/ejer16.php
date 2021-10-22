@@ -10,23 +10,21 @@
     <?php
     //Crea la función esBisiesto que reciba por parámetro una fecha en formato “dd-mm-aaaa” y 
     //devuelva un booleano indicando true si el día es bisiesto o false en caso contrario.
-    $i = date('d-m-y');
+
+    $anio = $_GET["introducir"];
+
+    $i = ($anio = date('Y'));
         if (esBisiesto($i)) {
             echo "<br>La fecha ".$i." es bisiesto";
         } else {
             echo "<br>La fecha ".$i." NO es bisiesto";
         }
-    /*
-        function esBisiesto($year=NULL) {
-            $year = ($year==NULL)? date('Y'):$year;
-            return ( ($year%4 == 0 && $year%100 != 0) || $year%400 == 0 ); // devolvemos true si es bisiesto
-        }
-        */
-        function esBisiesto($year=NULL AND $anio=date('Y')) {
+        function esBisiesto($anio) {
+            
             if(($anio % 4 == 0) && (($anio % 100 != 0) || ($anio % 400 == 0))){
-                 return (($year==NULL)? date('Y'):$year); // devolvemos true si es bisiesto
+                 return true; // devolvemos true si es bisiesto
             }else{
-                echo "No es bisiesto";
+                return false;
             }
                
         }
