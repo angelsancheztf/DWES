@@ -17,7 +17,15 @@
         exit();
     }
 
-    echo "Mi email es: ". $_SESSION["email"];
+    if (empty($_SESSION["email"])) {
+        header("Location: index.php");
+        echo "Mi email es: ". $_SESSION["email"];
+        exit();
+    } else {
+        echo "No se ha logueado correctamente"."<br>";
+        echo '<a href="index.php">Volver a atras</a>';
+    }
+    
 
     ?>
 
