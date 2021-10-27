@@ -21,13 +21,14 @@
     //Mostrar “Mi email es: xxxx” si ha iniciado sesión y enlace a dashboard.php
     //echo "Mi email es: ";
     //header("Location: dashboard.php");
+    /*
     if (empty($_SESSION["email"])) {
         echo "Mi email es: ".$_SESSION["email"];
         header("Location: index.php");
     } else {
         header("Location: dashboard.php");
     }
-
+    */
     ?>
 </body>
 </html>
