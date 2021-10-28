@@ -10,8 +10,9 @@
     <?php
     //Cierra sesión y redirige a login.php mostrando mensaje “Sesión cerrada correctamente”
     session_start();
+     echo "Sesion cerrada correctamente";
     session_destroy();
-    echo "Sesion cerrada correctamente";
+    sleep(10);
     header("Location: login.php");
 
     

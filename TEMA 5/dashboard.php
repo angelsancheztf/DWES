@@ -10,6 +10,7 @@
     <?php
     //Mostrar “Mi email es: xxxx” si el usuario se ha logueado correctamente y enlace a logout.php para cerrar sesión.
     //Si no se ha logueado correctamente, redirigirá a index.php con mensaje de error.
+    /*
     session_start();
 
     if (empty($_SESSION["usuario"])) {
@@ -26,7 +27,7 @@
         echo '<a href="index.php">Volver a atras</a>';
     }
     */
-
+    echo "Mi email es ".$_SESSION["id"];
     ?>
 
     <p>

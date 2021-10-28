@@ -7,15 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="login.php" method="POST">
-        Escribe tu nombre de usuario: <input name="usuario" type="text">
-        <br><br>
-        Contraseña: <input name="contraseña" type="password">
-        <br><br>
-        Email: <input name="email" type="email">
-        <br><br>
-        <input type="submit" value="Iniciar sesión">
-    </form>
     <?php
     //Formulario para iniciar sesión (action=“login.php”) si no ha iniciado sesión
     //Mostrar “Mi email es: xxxx” si ha iniciado sesión y enlace a dashboard.php
@@ -29,6 +20,20 @@
         header("Location: dashboard.php");
     }
     */
+    session_start();
+
+    if($_SESSION["id"] != null || $_SESSION["id"] != ""){
+        echo "Mi email es: ".$_SESSION["id"];
+        header("Location: dashboard.php");
+    } else {
+        echo "<form action='login.php' method='POST'>";
+        echo "Escribe tu nombre de usuario: <input name='usuario' type='text'>";
+        echo "<br><br>";
+        echo "Contraseña: <input name='contraseña' type='password'>";
+        echo "<br><br>";
+        echo "<input type='submit' value='Iniciar sesión'>";
+        echo "</form>";
+    }
     ?>
 </body>
 </html>
