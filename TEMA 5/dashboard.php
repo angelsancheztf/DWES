@@ -27,13 +27,20 @@
         echo '<a href="index.php">Volver a atras</a>';
     }
     */
+    session_start();
+
     if(empty($_SESSION["id"]=$email)){
         echo "Mi email es ".$_SESSION["id"];
     }else{
         echo "Debes iniciar sesión previamente.";
         header("Location: index.php");
     }
-    
+    /*
+    $value = 'Probando una cookie';
+    setcookie("TestCookie", $value);
+    setcookie("TestCookie", $value, time()+3600);
+    setcookie("TestCookie", $value, time()+3600, "/");
+    */
     ?>
 
     <p>

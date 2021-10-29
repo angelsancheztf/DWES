@@ -27,7 +27,7 @@
         header("Location: dashboard.php");
     } else {
         echo "<form action='login.php' method='POST'>";
-        echo "Escribe tu nombre de usuario: <input name='usuario' type='text'>";
+        echo "Email: <input name='email' type='email'>";
         echo "<br><br>";
         echo "Contraseña: <input name='contraseña' type='password'>";
         echo "<br><br>";

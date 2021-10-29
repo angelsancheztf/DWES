@@ -65,14 +65,14 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
 
         $datos = mysqli_query($conn,$consulta);
 
-        $email = $_POST[""];
-        $contraseña = $_POST[""];
+        $email = $_POST["email"];
+        $contraseña = $_POST["contraseña"];
 
         function existeUsuario($email, $datos ,$contraseña){
                 foreach ($datos as $clave => $valor){
 
-                    $BDcorreo = $valor["email"];
-                    $BDcontraseña = $valor["password"];
+                    $BDemail = $valor["email"];
+                    $BDpassword = $valor["password"];
 
                     
 
@@ -85,7 +85,7 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
                             return false; 
                         }         
                     }else{
-                        echo "Email incorrecto";  
+                        echo "Email incorrecto"."<br>";  
                         return false;       
                     } 
                 }
