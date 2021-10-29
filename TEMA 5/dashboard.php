@@ -27,7 +27,13 @@
         echo '<a href="index.php">Volver a atras</a>';
     }
     */
-    echo "Mi email es ".$_SESSION["id"];
+    if(empty($_SESSION["id"]=$email)){
+        echo "Mi email es ".$_SESSION["id"];
+    }else{
+        echo "Debes iniciar sesión previamente.";
+        header("Location: index.php");
+    }
+    
     ?>
 
     <p>

@@ -71,7 +71,9 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
         function existeUsuario($email, $datos ,$contraseña){
                 foreach ($datos as $clave => $valor){
 
-                    $correo = $valor["email"];
+                    $BDcorreo = $valor["email"];
+                    $BDcontraseña = $valor["password"];
+
                     
 
                     if ($valor == $email){ 
