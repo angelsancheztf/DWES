@@ -40,6 +40,8 @@
     setcookie("TestCookie", $value);
     setcookie("TestCookie", $value, time()+3600);
     setcookie("TestCookie", $value, time()+3600, "/");
+
+    setcookie('TestCookie', 'rojo', time() + 42000);
     */
     ?>
 
