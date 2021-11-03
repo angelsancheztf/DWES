@@ -47,60 +47,67 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
     $password = $_POST["contraseña"];
     $email = $_POST["email"];
 */
-        $servername = "localhost";
-        $database = "medac";
-        $username = "root";
-        $password = "";
-                
-        $conn = mysqli_connect($servername, $username, $password, $database);
-
-        if(!$conn) {
-            die("Connection failed: ".mysqli_connect_error());
-        }
-        echo "Conectado correctamente"."<br/>";
-
-        $consulta = "SELECT * FROM usuarios";
-
-        mysqli_select_db($conn,"medac");
-
-        $datos = mysqli_query($conn,$consulta);
 
         $email = $_POST["email"];
         $contraseña = $_POST["contraseña"];
 
-        function existeUsuario($email, $datos ,$contraseña){
+        function existeUsuario($email, $contraseña){
+
+            $servername = "localhost";
+            $database = "medac";
+            $username = "root";
+            $password = "";
+                    
+            $conn = mysqli_connect($servername, $username, $password, $database);
+    
+            if(!$conn) {
+                die("Connection failed: ".mysqli_connect_error());
+            }
+            echo "Conectado correctamente"."<br/>";
+            
+            $consulta="SELECT * FROM usuarios WHERE email='$email' && password='$contraseña';";
+            
+            mysqli_select_db($conn,"medac");
+    
+            $datos = mysqli_query($conn,$consulta);
+            
+            //print_r($contraseña);
                 foreach ($datos as $clave => $valor){
 
-                    $BDemail = $valor["email"];
-                    $BDpassword = $valor["password"];
+                    $email = $valor["email"];
+                    $password = $valor["password"];
+                    //$nombre = $valor["nombre"];
 
-                    
 
-                    if ($valor == $email){ 
-                        if ($valor == $contraseña){
-                            echo "Correcto, puedes pasar!"; 
-                            return true;
-                        }else{
-                            echo "Contraseña incorrecta";
-                            return false; 
-                        }         
+                    if (($email == $email) && ($contraseña == $password)){ 
+                        session_start();
+                        $_SESSION["email"]=$valor["email"];
+                        $_SESSION["nombre"]=$valor["nombre"];
+
+                        return true;        
                     }else{
-                        echo "Email incorrecto"."<br>";  
+                        //echo "Email incorrecto"."<br>";  
                         return false;       
                     } 
                 }
         }
         
-        if (existeUsuario($email, $datos, $contraseña)) {
-            //===; chequea el contenido de la variable y además, chequea que las dos variables sean del mismo tipo.
+        if (existeUsuario($email, $contraseña)) {
+            /*
             session_start();
             $_SESSION["id"] = $email;
 
             echo $_SESSION["id"];
+            */
             header("Location: dashboard.php");
         } else {
-            echo "El usuario o la contraseña son incorrectos"."<br>";
+            /*echo "El usuario o la contraseña son incorrectos"."<br>";
             echo '<a href="index.php">Volver a atras</a>';
+            */
+
+            header("Location: index.php?msj=1");
+            //die("Connection failed: ".mysqli_connect_error());
+            //error_reporting(0);
         }
     ?>
 </body>

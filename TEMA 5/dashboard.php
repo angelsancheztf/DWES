@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>dashboard.php</title>
 </head>
-<body>
+<body style= <?php echo "$_COOKIE[color]" ?> ;>
+    <form method="post" action="dashboard2.php"><br>
+        <input type="radio" value="#ff0000" name="color"><span style="color: red;">Rojo</span>
+        <input type="radio" value="#0000ff" name="color"><span style="color: blue;">Azul</span>
+        <input type="radio" value="#00ff00" name="color"><span style="color: green;">Verde</span>
+        <br><br>
+        <input type="submit" value="Cambiar">
+    </form>
+
+    <!--<br>
+    <a href="logout.php">Para cerrar sesión aquí</a>
+    <br>-->
     <?php
     //Mostrar “Mi email es: xxxx” si el usuario se ha logueado correctamente y enlace a logout.php para cerrar sesión.
     //Si no se ha logueado correctamente, redirigirá a index.php con mensaje de error.
@@ -28,12 +39,24 @@
     }
     */
     session_start();
+    
+    echo "
+    <br> Sesión iniciada: 
+    <br> Email: ".$_SESSION["email"]." 
+    <br> Nombre: ".$_SESSION["nombre"]." ";
 
-    if(empty($_SESSION["id"]=$email)){
-        echo "Mi email es ".$_SESSION["id"];
-    }else{
-        echo "Debes iniciar sesión previamente.";
-        header("Location: index.php");
+    if(!isset($_SESSION["email"])){
+        /*echo "Mi email es ".$_SESSION["id"];*/
+        header("Location: index.php?msj=2");
+    }
+    /*else{
+        /*echo "Debes iniciar sesión previamente.";
+        
+    }*/
+
+    if(isset($_COOKIE["color"])){
+
+        $color = $_COOKIE["color"];
     }
     /*
     $value = 'Probando una cookie';
