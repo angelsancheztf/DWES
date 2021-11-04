@@ -38,7 +38,8 @@
     
     inactivo();
 
-    setcookie("color",$_POST["color"],time()+3600*21);
+    //setcookie("color",$_POST["color"],time()+3600*21);
+    setcookie("color",$_GET["color"],strtotime("3600*21"), "/");
 
     if(!isset($_SESSION["email"])){
 
