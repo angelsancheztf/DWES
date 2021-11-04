@@ -27,9 +27,8 @@
         if(isset($_SESSION["timeout"])){ 
             $sessionTTL = time()-$_SESSION["timeout"];        
             if($sessionTTL > $tiempoInactivo){            
-                session_destroy();         
-                echo "Su sesión ha caducado";   
-                header("Location: index.php");        
+                session_destroy();           
+                header("Location: index.php?msj=4");        
             }    
         }
         

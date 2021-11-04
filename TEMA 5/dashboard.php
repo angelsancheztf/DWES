@@ -39,6 +39,28 @@
     }
     */
     session_start();
+
+    function inactivo(){
+
+        $tiempoInactivo = 60; 
+      
+        if(isset($_SESSION["timeout"])){ 
+            $sessionTTL = time()-$_SESSION["timeout"];  
+   
+            if($sessionTTL > $tiempoInactivo){            
+                session_destroy();            
+                header("Location: index.php?msj=4");
+    
+                if(isset($_COOKIE["color"])){
+                    setcookie("color","red",time()-60);
+                }
+            }    
+        }  
+        $_SESSION["timeout"] = time();
+        
+    }
+    
+    inactivo();
     
     echo "
     <br> Sesión iniciada: 

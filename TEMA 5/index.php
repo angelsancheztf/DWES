@@ -48,6 +48,10 @@
         if($_GET["msj"]=="3"){  
             echo '<script language="javascript">alert("Su sesión se ha cerrado correctamente. ");</script>';
         }
+
+        if($_GET["msj"]=="4"){  
+            echo '<script language="javascript">alert("Su sesión ha caducado. ");</script>';
+        }
     
     } /*else {
         echo "<form action='login.php' method='POST'>";
