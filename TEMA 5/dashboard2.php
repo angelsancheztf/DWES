@@ -17,7 +17,6 @@
     <?php
     session_start();
 
-    //setcookie("color",$_POST["color"],time()+3600*21);
     if(isset($_POST["color"])){
         setcookie("color",$_POST["color"],strtotime("3600*21"), "/");
     }
@@ -43,7 +42,7 @@
     echo "
     <br> Sesión iniciada: 
     <br> Email: ".$_SESSION["email"]." 
-    <br> Nombre: ".$_SESSION["nombre"]." ";
+    <br> Nombre: ".$_SESSION["nombre"]." <br>";
 
 
 

@@ -14,39 +14,6 @@
     //Si no existe, redirigimos de nuevo a index.php mostrando error no existe usuario.
     //Si existe creamos sesión y guardamos en la variable de sesión el email del usuario.
     //Redirigimos a dashboard.php.
-    /*
-    $usuario_correcto = "angel";
-    $contraseña_correcta = "elpepe2";
-    $email_correcto = "an@medac.es";
-
-    $usuario = $_POST["usuario"];
-    $contraseña = $_POST["contraseña"];
-    $email = $_POST["email"];
-
-if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && $email === $email_correcto) {
-    //===; chequea el contenido de la variable y además, chequea que las dos variables sean del mismo tipo.
-    session_start();
-    $_SESSION["usuario"] = $usuario;
-    $_SESSION["email"] = $email;
-    header("Location: dashboard.php");
-} else {//if($usuario !== $usuario_correcto && $contraseña !== $contraseña_correcta && $email !== $email_correcto){
-    echo "El usuario o la contraseña son incorrectos"."<br>";
-    echo '<a href="index.php">Volver a atras</a>';
-} //else {
-    //echo "El usuario o la contraseña son incorrectos";
-    
-    //header("Location: index.php");
-    
-//}
-
-    $usuario_correcto = "angel";
-    $password_correcta = "elpepe2";
-    $email_correcto = "an@medac.es";
-
-    $usuario = $_POST["usuario"];
-    $password = $_POST["contraseña"];
-    $email = $_POST["email"];
-*/
 
         $email = $_POST["email"];
         $contraseña = $_POST["contraseña"];
@@ -76,7 +43,6 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
 
                     $email = $valor["email"];
                     $password = $valor["password"];
-                    //$nombre = $valor["nombre"];
 
 
                 session_start();
@@ -86,27 +52,18 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
                         return true;        
                 }
             }else{
-                //echo "Email incorrecto"."<br>";  
+ 
                 return false;       
             } 
         }
         
         if (existeUsuario($email, $contraseña)) {
-            /*
-            session_start();
-            $_SESSION["id"] = $email;
 
-            echo $_SESSION["id"];
-            */
             header("Location: dashboard.php");
         } else {
-            /*echo "El usuario o la contraseña son incorrectos"."<br>";
-            echo '<a href="index.php">Volver a atras</a>';
-            */
 
             header("Location: index.php?msj=1");
-            //die("Connection failed: ".mysqli_connect_error());
-            //error_reporting(0);
+
         }
     ?>
 </body>
