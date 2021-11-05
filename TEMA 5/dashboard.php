@@ -44,7 +44,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard.php</title>
+    <title>dashboard.ph</title>
 </head>
 <body style= "color: <?php echo $_COOKIE["color"] ?>" >
     <form method="post" action="dashboard2.php"><br>
