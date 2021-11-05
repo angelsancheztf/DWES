@@ -42,7 +42,7 @@
     echo "
     <br> Sesión iniciada: 
     <br> Email: ".$_SESSION["email"]." 
-    <br> Nombre: ".$_SESSION["nombre"]." <br>";
+    <br> Nombre: ".$_SESSION["nombre"]." <br><br>";
 
 
 

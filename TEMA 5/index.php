@@ -22,6 +22,7 @@
 
     <form action="../index.html">
         <input type='submit' value='Cerrar sesión'>
+        <br><br>
     </form>
 
     <?php
