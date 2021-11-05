@@ -71,7 +71,7 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
     
             $datos = mysqli_query($conn,$consulta);
             
-            //print_r($contraseña);
+            if($datos->num_rows>0){
                 foreach ($datos as $clave => $valor){
 
                     $email = $valor["email"];
@@ -79,17 +79,16 @@ if ($usuario === $usuario_correcto && $contraseña === $contraseña_correcta && 
                     //$nombre = $valor["nombre"];
 
 
-                    if (($email == $email) && ($contraseña == $password)){ 
-                        session_start();
-                        $_SESSION["email"]=$valor["email"];
-                        $_SESSION["nombre"]=$valor["nombre"];
+                session_start();
+                 $_SESSION["email"]=$valor["email"];
+                 $_SESSION["nombre"]=$valor["nombre"];
 
                         return true;        
-                    }else{
-                        //echo "Email incorrecto"."<br>";  
-                        return false;       
-                    } 
                 }
+            }else{
+                //echo "Email incorrecto"."<br>";  
+                return false;       
+            } 
         }
         
         if (existeUsuario($email, $contraseña)) {

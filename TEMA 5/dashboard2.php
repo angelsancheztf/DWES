@@ -17,6 +17,11 @@
     <?php
     session_start();
 
+    //setcookie("color",$_POST["color"],time()+3600*21);
+    if(isset($_POST["color"])){
+        setcookie("color",$_POST["color"],strtotime("3600*21"), "/");
+    }
+
     function inactivo(){
   
         $tiempoInactivo = 60; 
@@ -40,8 +45,7 @@
     <br> Email: ".$_SESSION["email"]." 
     <br> Nombre: ".$_SESSION["nombre"]." ";
 
-    //setcookie("color",$_POST["color"],time()+3600*21);
-    setcookie("color",$_GET["color"],strtotime("3600*21"), "/");
+
 
     if(!isset($_SESSION["email"])){
 
