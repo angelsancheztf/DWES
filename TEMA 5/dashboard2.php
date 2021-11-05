@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard2.php</title>
 </head>
-<body style: <?php echo "$_COOKIE[color]" ?> ;>
+<body style= "color: <?php echo $_COOKIE["color"] ?>" >
 
-    <p>Volver a dashboard:
+    <p>Volver a atrás:
     <form action="dashboard.php">
         <input type="submit" value="Volver">
     </form>
     </p>
-    <br>
-    
-    <a href="logout.php">Para poder cerrar sesión aquí</a>
 
     <?php
     session_start();
@@ -38,6 +35,11 @@
     
     inactivo();
 
+    echo "
+    <br> Sesión iniciada: 
+    <br> Email: ".$_SESSION["email"]." 
+    <br> Nombre: ".$_SESSION["nombre"]." ";
+
     //setcookie("color",$_POST["color"],time()+3600*21);
     setcookie("color",$_GET["color"],strtotime("3600*21"), "/");
 
@@ -48,5 +50,6 @@
     }
 
     ?>
+    <a href="logout.php">Cerrar sesión aquí</a>
 </body>
 </html>

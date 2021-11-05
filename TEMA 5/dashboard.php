@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard.php</title>
 </head>
-<body style= <?php echo "$_COOKIE[color]" ?> ;>
+<body style= "color: <?php echo $_COOKIE["color"] ?>" >
     <form method="post" action="dashboard2.php"><br>
         <input type="radio" value="#ff0000" name="color"><span style="color: red;">Rojo</span>
         <input type="radio" value="#0000ff" name="color"><span style="color: blue;">Azul</span>
@@ -51,9 +51,6 @@
                 session_destroy();            
                 header("Location: index.php?msj=4");
     
-                if(isset($_COOKIE["color"])){
-                    setcookie("color","red",time()-60);
-                }
             }    
         }  
         $_SESSION["timeout"] = time();

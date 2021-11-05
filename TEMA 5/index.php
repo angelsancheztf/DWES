@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>index.php</title>
 </head>
 <body>
     <form action='login.php' method='POST'>
@@ -13,7 +13,18 @@
         Contraseña: <input name='contraseña' type='password'>
         <br><br>
         <input type='submit' value='Iniciar sesión'>
+        <br><br>
     </form>
+
+    <form action="../index.html">
+        <input type='submit' value='Cerrar sesión'>
+    </form>
+
+    <form action="../TEMA 5/oauth/login.php">
+        <p>Iniciar sesión con cuenta de Google:</p>
+        <input type="submit" value="Google"> 
+    </form>
+
     <?php
     //Formulario para iniciar sesión (action=“login.php”) si no ha iniciado sesión
     //Mostrar “Mi email es: xxxx” si ha iniciado sesión y enlace a dashboard.php
