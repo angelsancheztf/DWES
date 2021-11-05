@@ -14,8 +14,6 @@
     //sleep(10);
     //setcookie("color", "red", time()-60);
     header("Location: index.php?msj=3");
-
-    
     ?>
 </body>
 </html>
