@@ -29,7 +29,7 @@
     <form action="world.php" method='get'>
         <select name='pais'>
             <?php
-                if(mysqli_num_rows($datos) > 0){
+                if($datos->num_rows > 0){
                     foreach ($datos as $clave => $valor){
                         echo"<option value='".$valor['Code']."'>".$valor['Name']."</option>";
                     }

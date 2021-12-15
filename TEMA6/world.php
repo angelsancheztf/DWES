@@ -11,7 +11,7 @@
 
     $pais = $_GET["pais"];
 
-        function existeUsuario($pais){
+        function existePais($pais){
 
             $servername = "localhost";
             $database = "world";
@@ -40,60 +40,40 @@
 
             if(isset($_GET["pais"])){
 
-                echo"<h1>PAISES</h1>";
+                echo"<h1>PAIS</h1>";
+                echo "<h4>Pais =>".$datos_country->num_rows."</h4>";
 
                 if($datos_country->num_rows > 0){
                     foreach ($datos_country as $clave => $valor){
-                        echo"<h2>".$valor['Name']."</h2>";
+                        echo"<h3>".$valor['Name']."</h3>";
                     } 
-                }
+                } 
 
                 echo"<h1>CIUDADES</h1>";
+                echo "<h4>Ciudades =>".$datos_paises->num_rows."</h4>";
 
                 if($datos_paises->num_rows > 0){
                     foreach ($datos_paises as $clave => $valor){
-                        echo"<h2>".$valor['Name']."</h2>";
+                        echo"<h3>".$valor['Name']."</h3>";
                     } 
                 }  
-                
-                echo "<h3>Ciudades =>".$datos_paises->num_rows."</h3>";
 
                 echo"<h1>LENGUAS</h1>";
+                echo "<h4>Lenguas =>".$datos_country_language->num_rows."</h4>";
 
                 if($datos_country_language->num_rows > 0){
                     foreach ($datos_country_language as $clave => $valor){
-                        echo"<h2>".$valor['Language']."</h2>";
+                        echo"<h3>".$valor['Language']."</h3>";
                     } 
                 }   
 
-                echo "<h3>Lenguas =>".$datos_country_language->num_rows."</h3>";
-
             }
-            /*
-            if($datos->num_rows>0){
-                foreach ($datos as $clave => $valor){
-
-                    $CountryCode = $valor["CountryCode"];
-                    $Code = $valor["Code"];
-                    $pais = $valor["name"];
-
-                session_start();
-                 $_SESSION["id"]=$valor["id"];
-                 $_SESSION["lenguajes"]=$valor["lenguajes"];
-                
-                        return true;        
-                }
-            }else{
- 
-                return false;       
-            } 
-            */
         }
         
-        if (existeUsuario($pais)) {
-            
-
+        if (existePais($pais)) {
+        
             header("Location: world.php");
+
         }
     ?>
 
