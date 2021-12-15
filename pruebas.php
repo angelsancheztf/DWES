@@ -41,6 +41,14 @@
                 $valorMin++;
             }         
         }
+
+
+        $consulta_city="SELECT COUNT(*) FROM city WHERE CountryCode = '$CountryCode' ;";
+            $datos_city = mysqli_query($conn, $consulta_city);
+            $consulta_country="SELECT COUNT(*) FROM city WHERE Code = '$Code' ;";
+            $datos_country = mysqli_query($conn, $consulta_country);
+            $consulta_country_language="SELECT COUNT(*) FROM city WHERE CountryCode = '$CountryCode' ;";
+            $datos_country_language = mysqli_query($conn, $consulta_country_language);
     ?>
 </body>
 </html>
