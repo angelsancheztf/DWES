@@ -40,5 +40,13 @@
         <input type='submit' value='Inicia'>
         <br><br>
     </form>
-</body>
+
+    <form action="world.php" method="get">
+        <input type="submit" value="Poblacion" name="poblacion">
+        <input type="submit" value="SurfaceArea" name="surfacearea">
+    </form>
+    
+
+    Lista 10 ciudades $consulta_ciudad="SELECT `Name`, `Region` FROM `country` ORDER BY SurfaceArea DESC LIMIT 10; ";
+    Lista 10 paises $consulta_pais="SELECT `Name` FROM `city` ORDER BY Population DESC LIMIT 10 ";
 </html>

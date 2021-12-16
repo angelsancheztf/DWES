@@ -93,7 +93,7 @@ $surfacearea = $_GET["surfacearea"];
             
 
             mysqli_select_db($conn,"world");
-
+            
             if(isset($_GET["poblacion"])){
 
                 $consulta_ciudad="SELECT `Name` FROM `city` ORDER BY Population DESC LIMIT 10 ";
