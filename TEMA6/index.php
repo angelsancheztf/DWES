@@ -40,13 +40,13 @@
         <input type='submit' value='Inicia'>
         <br><br>
     </form>
-
-    <form action="world.php" method="get">
-        <input type="submit" value="Poblacion" name="poblacion">
-        <input type="submit" value="SurfaceArea" name="surfacearea">
+<!--Hacer tabla para numero 4, boton volver atras, intento todo un mismo archivo, cambiar value de todos los botones-->
+    <form action="world2.php" method="get">
+        <input type="submit" value="0" name="button">
+        <input type="submit" value="1" name="button">
+        <input type="submit" value="2" name="button">
+        <input type="submit" value="3" name="button">
+        <input type="submit" value="4" name="button">
+        <input type="submit" value="5" name="button">
     </form>
-    
-
-    Lista 10 ciudades $consulta_ciudad="SELECT `Name`, `Region` FROM `country` ORDER BY SurfaceArea DESC LIMIT 10; ";
-    Lista 10 paises $consulta_pais="SELECT `Name` FROM `city` ORDER BY Population DESC LIMIT 10 ";
 </html>

@@ -69,7 +69,7 @@ if(isset($_GET["pais"])){
                 }
             }
         }
-
+/*
 if(isset($_GET["poblacion"])){
 $poblacion = $_GET["poblacion"];
 }
@@ -78,7 +78,23 @@ if(isset($_GET["surfacearea"])){
 $surfacearea = $_GET["surfacearea"];
 }
 
-        function ejercicio2($poblacion, $surfacearea){
+if(isset($_GET["lifeexpectancy"])){
+$lifeexpectancy = $_GET["lifeexpectancy"];
+}
+
+if(isset($_GET["continente_pais"])){
+$continente_pais = $_GET["continente_pais"];
+}
+
+if(isset($_GET["continente_ciudad"])){
+$continente_ciudad = $_GET["continente_ciudad"];
+}
+
+if(isset($_GET["idioma"])){
+$idioma = $_GET["idioma"];
+}
+
+        function ejercicio2($poblacion, $surfacearea, $lifeexpectancy, $continente_pais, $idioma){
 
             $servername = "localhost";
             $database = "world";
@@ -121,19 +137,112 @@ $surfacearea = $_GET["surfacearea"];
                     } 
                 }
             }
+
+            if(isset($_GET["lifeexpectancy"])){
+
+                $consulta_pais_2="SELECT * FROM `country` WHERE LifeExpectancy IS NOT NULL ORDER BY LifeExpectancy ASC LIMIT 10 ";
+
+                $datos_pais_2 = mysqli_query($conn, $consulta_pais_2);
+
+
+                if($datos_pais_2->num_rows > 0){
+                    foreach ($datos_pais_2 as $clave => $valor){
+                        echo"<h3>".$valor['Name']."</h3>";
+                    } 
+                }
+            }
+
             
-        }
+            if(isset($_GET["continente_pais"])){
+
+                $consulta_pais_3="SELECT COUNT(country.Code) AS Numero_Paises, country.continent AS Continent FROM country GROUP BY country.continent ";
+
+                $datos_pais_3 = mysqli_query($conn, $consulta_pais_3);
+
+
+                if($datos_pais_3->num_rows > 0){
+                    foreach ($datos_pais_3 as $clave => $valor){
+                        echo"<h3>".$valor['Numero_Paises']." => ".$valor['Continent']."</h3>";
+                        //echo"<h3>".$valor['Continent']."</h3>";
+                    } 
+                }
+            }
+
+            
+            if(isset($_GET["continente_ciudad"])){
+
+                $consulta_ciudad_2="SELECT COUNT(CountryCode) AS Numero_Ciudades, District AS District FROM city GROUP BY District ";
+
+                $datos_ciudad_2 = mysqli_query($conn, $consulta_ciudad_2);
+
+
+                if($datos_ciudad_2->num_rows > 0){
+                    foreach ($datos_ciudad_2 as $clave => $valor){
+                        echo"<h3>".$valor['Numero_Ciudades']." => ".$valor['District']."</h3>";
+                        //echo"<h3>".$valor['Continent']."</h3>";
+                    } 
+                }
+            }
+
+            if(isset($_GET["idioma"])){
+                //Spanish y T van con comillas dobles
+                //$consulta_pais_4="SELECT `Name`, `Region` FROM `country` INNER JOIN countrylanguage ON country.Code = countrylanguage.CountryCode WHERE Language = 'Spanish' AND IsOfficial = 'T' ORDER BY countrylanguage.Percentage LIMIT 10 ";
+                $consulta_pais_4 = "SELECT `Name`,`Region`
+                FROM `country`
+                INNER JOIN countrylanguage ON country.`Code` = countrylanguage.`CountryCode` 
+                WHERE Language='Spanish'  AND IsOfficial = 'T'
+                ORDER BY `Percentage` DESC LIMIT 10 ";
+                $datos_pais_4 = mysqli_query($conn, $consulta_pais_4);
+
+
+                if($datos_pais_4->num_rows > 0){
+                    foreach ($datos_pais_4 as $clave => $valor){
+                        echo"<h3>".$valor['Name']."</h3>";
+                    } 
+                }
+            }
+        }*/
         if (isset($_GET["pais"]) && existePais($pais)) {
         
             header("Location: world.php");
 
         }
-
-        if (isset($_GET["poblacion"]) && ejercicio2($poblacion, $surfacearea)) {
+/*
+        if (isset($_GET["poblacion"]) && ejercicio2($poblacion, $surfacearea, $lifeexpectancy, $continente_pais, $continente_ciudad, $idioma)) {
         
             header("Location: world.php");
 
         }
+
+        if (isset($_GET["surfacearea"]) && ejercicio2($poblacion, $surfacearea, $lifeexpectancy, $continente_pais, $continente_ciudad, $idioma)) {
+        
+            header("Location: world.php");
+
+        }
+
+        if (isset($_GET["lifeexpectancy"]) && ejercicio2($poblacion, $surfacearea, $lifeexpectancy, $continente_pais, $continente_ciudad, $idioma)) {
+        
+            header("Location: world.php");
+
+        }
+
+        if (isset($_GET["continente_pais"]) && ejercicio2($poblacion, $surfacearea, $lifeexpectancy, $continente_pais, $continente_ciudad, $idioma)) {
+        
+            header("Location: world.php");
+
+        }
+
+        if (isset($_GET["continente_ciudad"]) && ejercicio2($poblacion, $surfacearea, $lifeexpectancy, $continente_pais, $continente_ciudad, $idioma)) {
+        
+            header("Location: world.php");
+
+        }
+
+        if (isset($_GET["idioma"]) && ejercicio2($poblacion, $surfacearea, $lifeexpectancy, $continente_pais, $continente_ciudad, $idioma)) {
+        
+            header("Location: world.php");
+
+        }*/
     ?>
 
 </body>
