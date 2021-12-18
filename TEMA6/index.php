@@ -40,13 +40,21 @@
         <input type='submit' value='Inicia'>
         <br><br>
     </form>
-<!--Hacer tabla para numero 4, boton volver atras, intento todo un mismo archivo, cambiar value de todos los botones-->
+<!--Hacer tabla para numero 4, 
+-----boton volver atras, 
+intento todo un mismo archivo, 
+----cambiar value de todos los botones-->
     <form action="world2.php" method="get">
-        <input type="submit" value="0" name="button">
-        <input type="submit" value="1" name="button">
-        <input type="submit" value="2" name="button">
-        <input type="submit" value="3" name="button">
-        <input type="submit" value="4" name="button">
-        <input type="submit" value="5" name="button">
+        <input type="submit" value="10 CIUDADES con más población del mundo" name="button">
+        <br><br>
+        <input type="submit" value="10 PAÍSES con mayor tamaño de área demográfica del mundo" name="button">
+        <br><br>
+        <input type="submit" value="10 PAÍSES con menor esperanza de vida" name="button">
+        <br><br>
+        <input type="submit" value="Número de PAÍSES por cada continente" name="button">
+        <br><br>
+        <input type="submit" value="Número de CIUDADES por cada continente" name="button">
+        <br><br>
+        <input type="submit" value="10 PAÍSES donde el idioma español sea el que más se hable y sea idioma oficial" name="button">
     </form>
 </html>
