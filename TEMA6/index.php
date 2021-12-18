@@ -10,11 +10,11 @@
         die("Connection failed: ".mysqli_connect_error());
     }
     
-    $consulta_paises="SELECT `Code`, `Name` FROM `country`";
+    $consulta_paises_1="SELECT `Code`, `Name` FROM `country`";
     
     mysqli_select_db($conn, "world");
 
-    $datos = mysqli_query($conn, $consulta_paises);
+    $datos = mysqli_query($conn, $consulta_paises_1);
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +40,11 @@
         <input type='submit' value='Inicia'>
         <br><br>
     </form>
-<!--Hacer tabla para numero 4, 
+<!--  -----Hacer tabla para numero 4, 
 -----boton volver atras, 
 intento todo un mismo archivo, 
 ----cambiar value de todos los botones-->
-    <form action="world2.php" method="get">
+    <form action="world.php" method="get">
         <input type="submit" value="10 CIUDADES con más población del mundo" name="button">
         <br><br>
         <input type="submit" value="10 PAÍSES con mayor tamaño de área demográfica del mundo" name="button">
