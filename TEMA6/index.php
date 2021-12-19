@@ -44,7 +44,7 @@
 -----boton volver atras, 
 intento todo un mismo archivo, 
 ----cambiar value de todos los botones-->
-    <form action="world2_prueba.php" method="get">
+    <form action="world2_bueno.php" method="get">
         <input type="submit" value="10 CIUDADES con más población del mundo" name="button">
         <br><br>
         <input type="submit" value="10 PAÍSES con mayor tamaño de área demográfica del mundo" name="button">
