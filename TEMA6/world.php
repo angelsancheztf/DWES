@@ -52,6 +52,16 @@ if(isset($_GET["pais"])){
             */
             if(isset($_GET["pais"])){
 
+                /*
+                * Hacemos un if para recoger los datos proporcionados por la BBDD, para después
+                * poder mostrarlo por pantalla.
+                * En el if lo que se hace es comprobar si existen filas como para poder mostrar, y
+                * si no hubiera ninguna no saldría nada por pantalla.
+                * Los datos de la BBDD se muestran por pantalla en el 2º th y en el td. 
+                * En el 2º th se muestran el número exacto de todos los paises seleccionados por el usuario (solamente uno).
+                * En el td se muestran los nombres de todos los paises.
+                */
+
                 echo"<h1>PAIS</h1>";
                 //echo "<h4>Pais =>".$datos_country->num_rows."</h4>";
                 /*
@@ -78,6 +88,16 @@ if(isset($_GET["pais"])){
                 <?php } ?>
     <?php
 
+                /*
+                * Hacemos un if para recoger los datos proporcionados por la BBDD, para después
+                * poder mostrarlo por pantalla.
+                * En el if lo que se hace es comprobar si existen filas como para poder mostrar, y
+                * si no hubiera ninguna no saldría nada por pantalla.
+                * Los datos de la BBDD se muestran por pantalla en el 2º th y en el td. 
+                * En el 2º th se muestran el número exacto de todas las ciudades seleccionados por el usuario.
+                * En el td se muestran los nombres de todas las ciudades.
+                */
+
                 echo"<h1>CIUDADES</h1>";
                 //echo "<h4>Ciudades =>".$datos_paises->num_rows."</h4>";
 
@@ -103,6 +123,16 @@ if(isset($_GET["pais"])){
                     </table>
                 <?php } ?>
     <?php
+
+                /*
+                * Hacemos un if para recoger los datos proporcionados por la BBDD, para después
+                * poder mostrarlo por pantalla.
+                * En el if lo que se hace es comprobar si existen filas como para poder mostrar, y
+                * si no hubiera ninguna no saldría nada por pantalla.
+                * Los datos de la BBDD se muestran por pantalla en el 2º th y en el td. 
+                * En el 2º th se muestran el número exacto de todas las lenguas del pais que haya seleccionado el usuario.
+                * En el td se muestran los nombres de todas las lenguas.
+                */
 
                 echo"<h1>LENGUAS</h1>";
                 //echo "<h4>Lenguas =>".$datos_country_language->num_rows."</h4>";
@@ -134,7 +164,8 @@ if(isset($_GET["pais"])){
         }
 
         /*
-        * Este if recoge el get y la funcion para poder mostrarlo por pantalla 
+        * Este if recoge el get y la funcion para poder mostrarlo por pantalla.
+        * El header es para saber por donde se muestra esa información obtenida en el if. 
         */
         if (isset($_GET["pais"]) && existePais($pais)) {
         

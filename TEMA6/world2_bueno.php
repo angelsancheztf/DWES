@@ -8,6 +8,10 @@
 </head>
 <body>
     <?php
+        /*
+        * Conexion con la BBDD. 
+        */
+        
         $servername = "localhost";
         $database = "world";
         $username = "root";
@@ -48,6 +52,7 @@
                    } 
                }
                */
+
                if($datos_ciudad->num_rows > 0){ ?>
                 <table border="2">
                     <tr>
@@ -86,6 +91,7 @@
                    } 
                }
                */
+
                if($datos_pais->num_rows > 0){ ?>
                 <table border="2">
                     <tr>
@@ -124,6 +130,7 @@
                    } 
                }
                */
+
                if($datos_pais_2->num_rows > 0){ ?>
                 <table border="2">
                     <tr>
@@ -162,6 +169,7 @@
                        //echo"<h3>".$valor['Continent']."</h3>";
                    } 
                }*/
+
                if($datos_pais_3->num_rows > 0){ ?>
                 <table border="2">
                     <tr>
@@ -231,21 +239,21 @@
            case "10 PAÍSES donde el idioma español sea el que más se hable y sea idioma oficial":
 
            if(isset($_GET["button"])){
-               //Spanish y T van con comillas dobles
-               //$consulta_pais_4="SELECT `Name`, `Region` FROM `country` INNER JOIN countrylanguage ON country.Code = countrylanguage.CountryCode WHERE Language = 'Spanish' AND IsOfficial = 'T' ORDER BY countrylanguage.Percentage LIMIT 10 ";
+
                $consulta_pais_4 = "SELECT `Name`,`Region`
                FROM `country`
                INNER JOIN countrylanguage ON country.`Code` = countrylanguage.`CountryCode` 
                WHERE Language='Spanish'  AND IsOfficial = 'T'
                ORDER BY `Percentage` DESC LIMIT 10 ";
-               $datos_pais_4 = mysqli_query($conn, $consulta_pais_4);
 
+               $datos_pais_4 = mysqli_query($conn, $consulta_pais_4);
 
                /*if($datos_pais_4->num_rows > 0){
                    foreach ($datos_pais_4 as $clave => $valor){
                        echo"<h3>".$valor['Name']."</h3>";
                    } 
                }*/
+
                if($datos_pais_4->num_rows > 0){ ?>
                 <table border="2">
                     <tr>
