@@ -40,10 +40,7 @@
         <input type='submit' value='Inicia'>
         <br><br>
     </form>
-<!--  -----Hacer tabla para numero 4, 
------boton volver atras, 
-intento todo un mismo archivo, 
-----cambiar value de todos los botones-->
+
     <form action="world2_bueno.php" method="get">
         <input type="submit" value="10 CIUDADES con más población del mundo" name="button">
         <br><br>
