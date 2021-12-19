@@ -41,7 +41,7 @@
         <br><br>
     </form>
 
-    <form action="world2_bueno.php" method="get">
+    <form action="world2.php" method="get">
         <input type="submit" value="10 CIUDADES con más población del mundo" name="button">
         <br><br>
         <input type="submit" value="10 PAÍSES con mayor tamaño de área demográfica del mundo" name="button">
