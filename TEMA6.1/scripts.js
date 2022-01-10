@@ -1,0 +1,34 @@
+function recogeCiudades(){
+
+    if(window.XMLHttpRequest){
+        http_request = new XMLHttpRequest();
+    } else if (window.ActiveXObject){
+        http_request = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    http_request.open(
+        'GET',
+        "http://localhost/dwes21/TEMA6.1/index.php",
+        true
+    );
+
+    http_request.send();
+
+    if(http_request.readyState == 4 && http_request.status == 200){
+        alert("todo va bien");
+    } else {
+        alert("algo falla");
+    }
+
+
+    $.ajax({
+        type: "POST",
+        url: 'getCities.php',
+        data: { selectCountry : country.value },
+        success: function(response)
+        {
+            var element = document.getElementById("");
+            element.innerHTML = response;
+        }
+    });
+}
