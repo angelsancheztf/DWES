@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!--<script src="scripts.js"></script>-->
+    <script src="scripts.js"></script>
 </head>
 <body>
     <!--Solo ciudades-->
@@ -49,65 +49,10 @@
     <!--<form action="getCities.php" method="get">-->
     <br><br>
     <!--<input type="submit" value="Peticion AJAX XMLHTTPREQUEST " name="button" onclick=" recogeCiudades('getCities.php') ">-->
-    <button onclick="botonXML()">XML</button>
+    <button onclick="botonXML()" name="pais" id="xml">XML</button>
     <br><br>
     <!--<input type="submit" value="Peticion AJAX JQUERY" name="button" id="ho" onclick="botonQuery()">-->
-    <button onclick="botonQuery()">JQuery</button>
+    <button onclick="botonQuery()" name="pais" id="jquery">JQuery</button>
     <!--</form>-->
-    <script>
-    
-
-        function botonQuery() {
-            let req = new XMLHttpRequest();
-            var pais = document.getElementById("pais").value;
-            console.log(pais);
-
-            req.open("GET", 'http://localhost/dwes21/TEMA6.1/bbdd.php', true);
-            req.onreadystatechange = () => {
-                if(req.readyState == 4){
-                    document.getElementById("hola").innerHTML = req.responseText;
-                }
-            }
-            var data = new FormData();
-            data.append('country', pais);
-
-            req.send(data);
-        }
-
-        function botonXML(){
-            if (window.XMLHttpRequest) {
-                var http_request = new XMLHttpRequest();
-            } else if (window.ActiveXObject) {
-                var http_request = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-
-            http_request.open(
-                'GET',
-                url,
-                true
-            );
-
-            http_request.send();
-
-            if (http_request.readyState == 4 && http_request.status == 200) {
-                alert("todo va bien");
-            } else {
-                alert("algo falla");
-            }
-
-
-            $.ajax({
-                type: "POST",
-                url: 'getCities.php',
-                data: {
-                    selectCountry: country.value
-                },
-                success: function(response) {
-                    var element = document.getElementById("");
-                    element.innerHTML = response;
-                }
-            });
-        }
-    </script>
 </body>
 </html>

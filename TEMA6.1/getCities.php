@@ -1,5 +1,9 @@
 <?php
 
+if(isset($_GET["pais"])){
+    $pais = $_GET["pais"];
+}
+
 $servername = "localhost";
 $database = "world";
 $username = "root";
@@ -12,36 +16,33 @@ if (!$conn) {
 }
 
 
-mysqli_select_db($conn, "world");
+$consulta_paises="SELECT `Name` FROM city WHERE CountryCode = '$pais' ;";
 
-if (isset($_GET["button"])) {
+mysqli_select_db($conn,"world");
 
-    $consulta_ciudad = "SELECT `Name` FROM `city` ORDER BY Population DESC LIMIT 10 ";
+$datos_paises = mysqli_query($conn, $consulta_paises);
 
-    $datos_ciudad = mysqli_query($conn, $consulta_ciudad);
+echo "<h1>CIUDADES</h1>";
+//echo "<h4>Ciudades =>".$datos_paises->num_rows."</h4>";
 
+/*if($datos_paises->num_rows > 0){
+                    foreach ($datos_paises as $clave => $valor){
+                        echo"<h3>".$valor['Name']."</h3>";
+                    } 
+                } */
 
-    /*if($datos_ciudad->num_rows > 0){
-        foreach ($datos_ciudad as $clave => $valor){
-            echo"<h3>".$valor['Name']."</h3>";
-        } 
-    }
-    */
-
-    if ($datos_ciudad->num_rows > 0) { ?>
-        <table border="2">
+if ($datos_paises->num_rows > 0) { ?>
+    <table border="2">
+        <tr>
+            <th>CIUDADES</th>
+            <th><?php echo "<h4>Ciudades =>" . $datos_paises->num_rows . "</h4>"; ?></th>
+        </tr>
+        <?php foreach ($datos_paises as $clave => $valor) { ?>
             <tr>
-                <th>Ciudades</th>
+
+                <td> <?php echo $valor['Name']; ?> </td>
 
             </tr>
-            <?php foreach ($datos_ciudad as $clave => $valor) { ?>
-                <tr>
-                    <td> <?php echo $valor['Name']; ?> </td>
-
-                </tr>
-            <?php } ?>
-        </table>
-    <?php } ?>
-<?php
-}
-?>
+        <?php } ?>
+    </table>
+<?php } ?>
