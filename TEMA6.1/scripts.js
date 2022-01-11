@@ -1,5 +1,6 @@
 function botonQuery() {
     let req = new XMLHttpRequest();
+    //si quito el .value, el boton se convierte en la tabla
     var pais = document.getElementById("pais").value;
     console.log(pais);
 
