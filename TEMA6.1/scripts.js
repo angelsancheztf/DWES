@@ -1,7 +1,8 @@
 function botonQuery() {
     let req = new XMLHttpRequest();
     //si quito el .value, el boton se convierte en la tabla
-    var pais = document.getElementById("pais").value;
+    //var pais = document.getElementById("pais").value;
+    var pais = document.getElementById("pais");
     console.log(pais);
 
     req.open("GET", 'http://localhost/dwes21/TEMA6.1/getCities.php?pais=ESP', true);
