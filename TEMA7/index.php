@@ -7,53 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-
-    //$conex = new mysqli("localhost", "root", "pass", "database");
-    $conex = new mysqli("localhost", "root", "", "world");
-    $conex->autocommit(false);
-
-    try{$conex->begin_transaction();
-        $conex->query("INSERT INTO country(Code, Name) VALUES ('MED', 'MEDAC')");
-        $conex->query("INSERT INTO city(CountryCode, Name) VALUES ('MED', 'ARENA')");
-        $conex->query("INSERT INTO city(CountryCode, Name) VALUES ('MED', 'MÁLAGA')");
-        $conex->query("INSERT INTO countrylanguage(CountryCode, Language) VALUES ('MED', 'PHP')");
-        $conex->query("INSERT INTO countrylanguage(CountryCode, Language) VALUES ('MED', 'JAVA')");
-        $conex->commit();
-    } catch (Exception $e) {
-        $conex->rollback();
-        echo 'Something fails: ', $e->getMessage(), "\n";
-    }
-//---------------------------------------------------------------------------------------------------------
-    $conex = new mysqli("localhost", "root", "", "world");
-    $conex->autocommit(false);
-
-    try{$conex->begin_transaction();
-        $conex->query("DELETE FROM city WHERE Name = 'MÁLAGA'");
-        $conex->query("INSERT INTO city(CountryCode, Name) VALUES ('MED', 'CÓRDOBA')");
-        $conex->query("INSERT INTO city(CountryCode, Name) VALUES ('MED', 'SEVILLA')");
-        $conex->query("UPDATE country SET Code = 'IES' WHERE Code = 'MED' ");
-        $conex->commit();
-    } catch (Exception $e) {
-        $conex->rollback();
-        echo 'Something fails: ', $e->getMessage(), "\n";
-    }
-//---------------------------------------------------------------------------------------------------------
-    $conex = new mysqli("localhost", "root", "", "world");
-    $conex->autocommit(false);
-
-    try{$conex->begin_transaction();
-        $conex->query("DELETE FROM country WHERE Code = 'IES'");
-        $conex->query("INSERT INTO countrylanguage(CountryCode, Language) VALUES ('MED', 'PHYTON')");
-        $conex->query("INSERT INTO countrylanguage(CountryCode, Language) VALUES ('MED', 'JAVASCRIPT')");
-        $conex->query("INSERT INTO countrylanguage(CountryCode, Language) VALUES ('MED', 'MySQL')");
-        $conex->query("INSERT INTO countrylanguage(CountryCode, Language) VALUES ('MED', 'HTML')");
-        $conex->query("INSERT INTO countrylanguage(CountryCode, Language) VALUES ('MED', 'CSS')");
-        $conex->commit();
-    } catch (Exception $e) {
-        $conex->rollback();
-        echo 'Something fails: ', $e->getMessage(), "\n";
-    }
-    ?>
+    <form action="index2.php" method="post" name="option">
+        <input type='submit' value='Transaccion 1' name="1">
+        <br><br>
+        <input type='submit' value='Transaccion 2' name="2">
+        <br><br>
+        <input type='submit' value='Transaccion 3' name="3">
+        <br><br>
+    </form>
 </body>
 </html>
