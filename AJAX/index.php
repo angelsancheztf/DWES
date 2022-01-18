@@ -39,7 +39,7 @@
     <!--Solo ciudades-->
 
     <form action="mostrar.php" method='get'>
-        <select id="pais" name='pais'>
+        <select id="pais" name='pais' name="delete">
             <?php
             if ($datos->num_rows > 0) {
                 foreach ($datos as $clave => $valor) {
@@ -61,7 +61,7 @@
     
     <form action="insertar.php">
         <br><br>
-        <button onclick="" name="pais" id="2" >Insertar ciudades</button>
+        <button name="pais" id="2" >Insertar ciudades</button>
     </form>
 
 

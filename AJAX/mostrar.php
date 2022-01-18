@@ -27,7 +27,8 @@ if (!$conn) {
 * La consulta que hacemos para recoger los datos de la BBDD. 
 */
 
-$consulta_paises="SELECT `Name` FROM city WHERE CountryCode = '$pais' ;";
+$consulta_paises="SELECT `ID`, `Name` FROM city WHERE CountryCode = '$pais' ;";
+
 
 mysqli_select_db($conn,"world");
 
@@ -39,9 +40,9 @@ if($datos_paises->num_rows > 0){ ?>
     <br><br>
     <input value=" <?php echo $valor['Name']; ?> ">
     
-    <button value="" type="guardar">Guardar</button>
+    <button value=" <?php echo $valor['ID']; ?> " onclick="saveCity()"> Guardar</button>
     
-    <button value=" <?php echo $valor['DELETE FROM `city` WHERE ID = 1']; ?> "> Borrar</button>
+    <button value=" <?php echo $valor['ID']; ?> " onclick="deleteCity()"> Borrar</button>
       
 <?php } ?>
 

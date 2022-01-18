@@ -53,3 +53,39 @@ function botonXML(){
         }
     });
 }
+
+function saveCity(){
+    if (window.XMLHttpRequest) {
+        var http_request = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        var http_request = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    // Realizamos la petición a donde nosotros deseemos
+    http_request.open(
+        'GET',
+        `mostrar.php`,
+        true
+    );
+    // Enviamos esa petición
+    http_request.send();
+    // Recogemos los datos mediante una url y los mostramos mediante el document.getElementById("respuesta2")
+    $.ajax({
+        type: "GET",
+        url: `mostrar.php`,
+        data: {
+            selectCountry: city.value
+        },
+        success: function(response) {
+            var element = document.getElementById("respuesta2");
+            element.innerHTML = response;
+        }
+    });
+}
+
+function deleteCity(){
+
+}
+
+function insertCity(){
+    
+}
