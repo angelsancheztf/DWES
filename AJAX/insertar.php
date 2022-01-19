@@ -18,6 +18,10 @@
             $pais = $_GET["pais"];
         }
 
+        if(isset($_GET["name"])){
+            $name = $_GET["name"];
+        }
+
         $servername = "localhost";
         $database = "world";
         $username = "root";
@@ -40,9 +44,8 @@
 
         $datos_paises = mysqli_query($conn, $consulta_paises);
 
-            if($datos_paises->num_rows > 0){
+            if($datos_paises > 0){
                 foreach ($datos_paises as $clave => $valor){
-                    echo $valor['CountryCode'];
                     echo $valor['Name'];
                 } 
             } else {

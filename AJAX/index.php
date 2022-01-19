@@ -52,8 +52,9 @@
         <br><br>
         <input type='submit' value='Mostrar ciudades'>
         <br><br>
+        <div id="respuesta"></div>
     </form>
-
+    <!--
     <form action="mostrar.php" method="get">
         <br><br>
         <input id="pais" name='pais' type="Insetar" placeholder="Mostrar ciudades por abrebiatura">
@@ -61,13 +62,29 @@
     
     <form action="insertar.php">
         <br><br>
-        <button name="pais" id="2" >Insertar ciudades</button>
+        <button name="pais" name="name" >Insertar ciudades</button>
     </form>
 
-
+    <button onclick="copyCity()" name="pais" >Copiar ciudades</button>
+    -->
+    <button onclick="insertCity()" >Insertar ciudades</button>
     <br><br>
-    <button onclick="botonQuery()" name="pais" id="3">Copiar ciudades</button>
+    <button onclick='copyCity(document.getElementById("country").value)'>Copiar ciudades</button>
 
-    <div id="respuesta"></div>
+    <script>
+        function insertCity() {
+            $(document).ready(function() {
+                $('#write').attr("hidden", false);
+                console.log(document.getElementById("country").value);
+
+                setTimeout(function() {
+                    $('#write').attr("hidden", true);
+                    $('#newCity').val("");
+                }, 4000);
+            });
+        }
+    </script>
+
+    <div id="respuesta2"></div>
 </body>
 </html>
