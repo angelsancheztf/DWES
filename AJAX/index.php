@@ -39,7 +39,7 @@
     <!--Solo ciudades-->
 
     <form action="mostrar.php" method='get'>
-        <select id="pais" name='pais' name="delete">
+        <select id="pais" name='pais'>
             <?php
             if ($datos->num_rows > 0) {
                 foreach ($datos as $clave => $valor) {
@@ -52,7 +52,6 @@
         <br><br>
         <input type='submit' value='Mostrar ciudades'>
         <br><br>
-        <div id="respuesta"></div>
     </form>
     <!--
     <form action="mostrar.php" method="get">
@@ -70,7 +69,13 @@
     <button onclick="insertCity()" >Insertar ciudades</button>
     <br><br>
     <button onclick='copyCity(document.getElementById("country").value)'>Copiar ciudades</button>
-
+    <br><br>
+    <div id="write" hidden="true">
+            <input type='text' id='newCity' style="margin-left: 3px">
+            <button type='button' id="newCityBtn"
+                onclick='save(document.getElementById("newCity").value,document.getElementById("country").value)'>
+                Guardar cambios
+            </button>
     <script>
         function insertCity() {
             $(document).ready(function() {

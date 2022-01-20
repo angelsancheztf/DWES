@@ -40,9 +40,14 @@ if($datos_paises->num_rows > 0){ ?>
     <br><br>
     <input value=" <?php echo $valor['Name']; ?> ">
     
-    <button value=" <?php echo $valor['ID']; ?> " onclick="saveCity()"> Guardar</button>
+    <button type="button"
+        onclick="saveCity('<?php echo $value["Name"]; ?>')">
+        Guardar
+    </button>
+    <!--<button value=" <?php echo $valor['ID']; ?> " onclick="saveCity()"> Guardar</button>-->
     
-    <button value=" <?php echo $valor['ID']; ?> " onclick="deleteCity()"> Borrar</button>
+    <button type="button" onclick="deleteCity('<?php echo $value["Name"]; ?>')"> Borrar</button>
+    <!-- <button value=" <?php echo $valor['ID']; ?> " onclick="deleteCity()"> Borrar</button> -->
       
 <?php } ?>
 
