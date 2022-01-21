@@ -2,11 +2,11 @@ function show() {
     var country = $("#country").val();
     $.ajax({
       type: "POST",
-      url: "result.php",
+      url: "mostrar.php",
       data: { "country": country },
   
       success: function (response) {
-        $("#results").html(response);
+        $("#resultado").html(response);
       }
     })
   }
@@ -14,15 +14,14 @@ function show() {
   function saveCity(name, newName) {
     $.ajax({
       type: "POST",
-      url: "ajax.php",
+      url: "consultas.php",
       data: {
-        "query": "1",
+        "tabla": "1",
         "name": name,
         "newName": newName
       },
       success: function (response) {
-        // console.log(name, cc)
-        alert("CIUDAD ACTUALIZADA");
+        alert("Actualización con exito");
       }
     })
   }
@@ -30,47 +29,44 @@ function show() {
   function deleteCity(name) {
     $.ajax({
       type: "POST",
-      url: "ajax.php",
+      url: "consultas.php",
       data: {
-        "query": "2",
+        "tabla": "2",
         "name": name
       },
       success: function (response) {
-        // console.log(name, cc)
-        alert("CIUDAD BORRADA");
+        alert("Borrado con exito");
         show();
       }
     })
   }
   
-  function save(name, cc) {
+  function save(name, code) {
     $.ajax({
       type: "POST",
-      url: "ajax.php",
+      url: "consultas.php",
       data: {
-        "query": "3",
+        "tabla": "3",
         "name": name,
-        "cc": cc
+        "code": code
       },
       success: function (response) {
-        // console.log(name, cc)
-        alert("CIUDAD CREADA");
+        alert("Creación con exito");
     show();
       }
     })
   }
   
-  function copy(country) {
+  function copyCity(country) {
     $.ajax({
       type: "POST",
-      url: "ajax.php",
+      url: "consultas.php",
       data: {
-        "query": "4",
+        "tabla": "4",
         "country": country
       },
       success: function (response) {
-        // console.log(country)
-        alert("TABLA CREADA");
+        alert("Tabla nueva creada con exito");
       }
     })
   }

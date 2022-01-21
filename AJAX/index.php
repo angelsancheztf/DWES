@@ -74,8 +74,9 @@
             <input type='text' id='newCity' style="margin-left: 3px">
             <button type='button' id="newCityBtn"
                 onclick='save(document.getElementById("newCity").value,document.getElementById("country").value)'>
-                Guardar cambios
+                Guardar
             </button>
+            <br>
     <script>
         function insertCity() {
             $(document).ready(function() {
@@ -89,7 +90,5 @@
             });
         }
     </script>
-
-    <div id="respuesta2"></div>
 </body>
 </html>

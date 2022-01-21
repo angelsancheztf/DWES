@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <rss version="2.0">
+        <channel>
+            <item>
+                <title>Noticia 1</title>
+                <link>https://www.spreaker.com/show/ciencia-ficcion</link>
+                <description>Noticia 1</description>
+            </item>
+        </channel>
+    </rss>

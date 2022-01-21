@@ -17,9 +17,10 @@
     <div id="map"></div>
     <button onclick="initMap()">Hola</button>
 
-    <script async defer 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApZEcGDIi-vyqEuhNmo9TAC0FeK02p7KM&callback=initMap">
-    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApZEcGDIi-vyqEuhNmo9TAC0FeK02p7KM&callback=initMap&v=weekly"
+      async
+    ></script>
     <script src="main.js"></script>
     <script src="localizacion.js"></script>
 </body>
