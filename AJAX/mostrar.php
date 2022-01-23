@@ -1,17 +1,8 @@
 <?php
+// Con este post recojo el nombre del codigo del país seleccionado
+$select_country = $_POST["country"];
 
-/*
-* Este if sirve para recoger el get y la variable del index. 
-*/
-
-if(isset($_GET["pais"])){
-    $pais = $_GET["pais"];
-}
-
-/*
-* Conexión a la base de datos 
-*/ 
-
+// conexion a la bbdd
 $servername = "localhost";
 $database = "world";
 $username = "root";
@@ -23,33 +14,46 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-/*
-* La consulta que hacemos para recoger los datos de la BBDD. 
-*/
+// La consulta que hacemos para recoger los datos de la BBDD.
+$consulta_city = "SELECT Name FROM city WHERE CountryCode='$select_country'";
 
-$consulta_paises="SELECT `ID`, `Name` FROM city WHERE CountryCode = '$pais' ;";
+mysqli_select_db($conn, "world");
+
+$datos_ciudad = mysqli_query($conn, $consulta_city);
+
+?>
+
+<html>
+<title>Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./scripts.js"></script>
+
+<body>
+    <div class=" container">
+            <?php
+            $count = 1;
+
+            foreach ($datos_ciudad as $value => $valor) {
+
+            ?>
+                    <br><br>
+                    <input type="text" id="<?php echo $count; ?>"
+                        value="<?php echo $valor["Name"]; ?>">
+                
+                    <button type="button"
+                        onclick="saveCity('<?php echo $valor["Name"]; ?>', document.getElementById('<?php echo $count; ?>').value)">
+                        Guardar
+                    </button>
+
+                    <button type="button" onclick="deleteCity('<?php echo $valor["Name"]; ?>')">
+                        Borrar 
+                    </button>
 
 
-mysqli_select_db($conn,"world");
-
-$datos_paises = mysqli_query($conn, $consulta_paises);
-
-if($datos_paises->num_rows > 0){ ?>
-
-<?php foreach ($datos_paises as $clave => $valor){ ?>
-    <br><br>
-    <input value=" <?php echo $valor['Name']; ?> ">
-    
-    <button type="button"
-        onclick="saveCity('<?php echo $value["Name"]; ?>')">
-        Guardar
-    </button>
-    <!--<button value=" <?php //echo $valor['ID']; ?> " onclick="saveCity()"> Guardar</button>-->
-    
-    <button type="button" onclick="deleteCity('<?php echo $value["Name"]; ?>')"> Borrar</button>
-    <!-- <button value=" <?php //echo $valor['ID']; ?> " onclick="deleteCity()"> Borrar</button> -->
-      
-<?php } ?>
-
-<?php } ?>
-
+                <?php
+                $count++;
+            }
+                ?>
+    </div>
+</body>
+</html>
