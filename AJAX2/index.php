@@ -1,5 +1,5 @@
 <?php
-
+// conexion a la bbdd.
 $servername = "localhost";
 $database = "world";
 $username = "root";
@@ -11,13 +11,11 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-//preparamos sentencia
+// La consulta que hacemos para recoger los datos de la BBDD.
 $consulta_country = 'SELECT Code,Name FROM country';
 
-//seleccionamos base de datos
 mysqli_select_db($conn, "world");
 
-//ejecutamos consulta a bd
 $datos = mysqli_query($conn, $consulta_country);
 
 ?>
@@ -27,7 +25,7 @@ $datos = mysqli_query($conn, $consulta_country);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Ejercicio World</title>
+    <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts.js"></script>
 </head>
@@ -49,11 +47,15 @@ $datos = mysqli_query($conn, $consulta_country);
             </select>
         </form>
         <br><br>
+        <!--Mostramos las ciudades-->
         <button onclick="show()">Mostrar ciudades</button>
+        <!--Insertamos ciudades nuevas-->
         <button onclick="insertCity()">Insertar ciudad</button>
+        <!--Copiamos las ciudades a una nueva bbdd-->
         <button onclick='copyCity(document.getElementById("country").value)'>Copiar ciudades</button>
         <br><br>
 
+        <!--Botón para guardar ciudades nuevas-->
         <div id="guardar" hidden="true">
             <input type='text' id='newCity'>
             <button type='button'
@@ -65,6 +67,7 @@ $datos = mysqli_query($conn, $consulta_country);
         <div id="resultado"></div>
 
         <script>
+            // insertamos ciudades nuevas
             function insertCity() {
                 $(document).ready(function() {
                     $('#guardar').attr("hidden", false);

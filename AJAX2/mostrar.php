@@ -2,6 +2,7 @@
 // Con este post recojo el nombre del codigo del país seleccionado
 $select_country = $_POST["country"];
 
+// conexion a la bbdd
 $servername = "localhost";
 $database = "world";
 $username = "root";
@@ -13,21 +14,19 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-//preparamos sentencias
+// La consulta que hacemos para recoger los datos de la BBDD.
 $consulta_city = "SELECT Name FROM city WHERE CountryCode='$select_country'";
 
-//seleccionamos base de datos
 mysqli_select_db($conn, "world");
 
-//ejecutamos consulta a bd
-$datos_ciudad = mysqli_query($conn, $consulta_city); // consulta para ciudades
+$datos_ciudad = mysqli_query($conn, $consulta_city);
 
 ?>
 
 <html>
-<title>Ejercicio World</title>
+<title>Document</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="ajax.js"></script>
+<script src="./scripts.js"></script>
 
 <body>
     <div class=" container">

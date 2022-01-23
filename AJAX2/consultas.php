@@ -1,5 +1,5 @@
 <?php
-
+// conexion a la bbdd
 $servername = "localhost";
 $database = "world";
 $username = "root";
@@ -13,6 +13,7 @@ if (!$conn) {
 
 mysqli_select_db($conn, "world");
 
+// Las consultas que hacemos para recoger los datos de la BBDD.
 if (isset($_POST["tabla"])) {
 
     if ($_POST["tabla"] == "1") {
