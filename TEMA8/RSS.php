@@ -17,3 +17,5 @@
     <a type="application/rss+xml" href="RSS.xml">Aquí</a>
 </body>
 </html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"></html>
