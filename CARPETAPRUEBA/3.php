@@ -23,6 +23,7 @@
                         echo "<div class='card-body'>";
                             echo "<h5>La noticia es {$notice->title}</h5>";
                             echo "<h5>Descripcion{$notice->description}</h5>";
+                            echo "<h5>Link{$notice->link}</h5>";
                         echo "</div>";
                     echo "</article>";
                 }
