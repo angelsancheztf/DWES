@@ -2,7 +2,7 @@
  $domOBJ = new DOMDocument();
  $domOBJ->load("rss.xml");//XML page URL
  
- $content = $domOBJ- >getElementsByTagName("item");
+ $content = $domOBJ->getElementsByTagName("item");
  
  foreach( $content as $data )
  {

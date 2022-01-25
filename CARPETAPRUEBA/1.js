@@ -1,7 +1,7 @@
 let map;
 
 function initMap() {
-  const myLatLng = {lat: -34.397, lng: 150.644};
+  const myLatLng = {lat: 34.043, lng: -118.267};
 
   var texto = '<h1> Nombre del lugar </h1>' + '<p> Descripcion del lugar</p>' +
               '<a href=https://www.google.com>Pagina web</a>';

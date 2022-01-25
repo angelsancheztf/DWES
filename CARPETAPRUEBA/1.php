@@ -7,12 +7,15 @@
     <script src="./1.js"></script>
   </head>
   <body>
+    <h1>Localización del </h1>
     <div id="map"></div>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApZEcGDIi-vyqEuhNmo9TAC0FeK02p7KM&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=...&callback=initMap&v=weekly"
 
-    ></script>
+    >
+  //AIzaSyApZEcGDIi-vyqEuhNmo9TAC0FeK02p7KM
+  </script>
   </body>
 </html>
