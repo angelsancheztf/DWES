@@ -7,7 +7,12 @@
     <script src="./mapa.js"></script>
   </head>
   <body>
-    <h1>Localización del Estadio de Los Lakers</h1>
+    <h3>Localización del Estadio de Los Lakers (1)</h3>
+    <h3>Localización del Camp Nou (2)</h3>
+    <h3>Localización del Estadio Nuevo El Arcángel (3)</h3>
+    <h3>Localización del Star Wars: Galaxy´s Edge (California) (4)</h3>
+    <h3>Localización del The National September 11 Memorial Museum (5)</h3>
+ 
     <!--Mostramos el mapa-->
     <div id="map"></div>
 
