@@ -3,11 +3,12 @@
   <head>
     <title>Simple Map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="./1.css" />
-    <script src="./1.js"></script>
+    <link rel="stylesheet" type="text/css" href="./mapa.css" />
+    <script src="./mapa.js"></script>
   </head>
   <body>
     <h1>Localización del </h1>
+    <!--Mostramos el mapa-->
     <div id="map"></div>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->

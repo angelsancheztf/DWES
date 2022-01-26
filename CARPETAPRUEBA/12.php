@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCRAPPING WEB</title>
-</head>
-<body>
 <?php
 if(isset($_GET['btn'])):
     function file_get_contents_curl($url){
@@ -55,7 +38,3 @@ else:
 	<button name="btn" type="submit">SCRAPEAR</button>		
 </form>
 <?php endif; ?>
-</body>
-</html>
-</body>
-</html>
